@@ -3,9 +3,9 @@ using UnityEngine;
 /// <summary>
 /// 
 /// </summary>
-public interface IButtonObserver
+public interface IButtonPublisher
 {
     public abstract event Action setButtonPressed;
-    public abstract void PressButton();
+    public abstract void Notify();
 
 }

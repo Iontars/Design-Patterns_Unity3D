@@ -2,20 +2,23 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public enum Difficult{ easy, normal, hard }
 
-[RequireComponent(typeof(GameManager))]
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IObserver
 {
     [Header("Components Stuff")][Space(3)]
-    public Text currentText;
-    public StartButton startButton;
+    public List<Text> currentText;
 
     private GameObject[] _setButtons;
-    private List<IButtonObserver> _publisherButtons;
+    private List<IButtonPublisher> _publisherButtons;
     private Difficult _difficult_e;
     private byte _counter = default;
+
+    public void Subscribe(IButtonPublisher value) => value.setButtonPressed += ChooseDifficult;
+
+    public void UnSubscribe(IButtonPublisher value) => value.setButtonPressed -= ChooseDifficult;
 
     private void Awake()
     {
@@ -36,7 +39,11 @@ public class GameManager : MonoBehaviour
             case 1: _difficult_e = Difficult.normal; break;
             case 2: _difficult_e = Difficult.hard; break;
         }
-        gameObject.GetComponent<GameManager>()?.DisplayInfoOnTEXT(currentText, _difficult_e);
+
+        foreach (var item in currentText)
+        {
+            gameObject.GetComponent<GameManager>()?.DisplayInfoOnTEXT(item, _difficult_e);
+        }
     }
 
     public void DisplayInfoOnTEXT<T>(Text textComponent, T enumValue ) => textComponent.text = enumValue.ToString();
@@ -45,14 +52,15 @@ public class GameManager : MonoBehaviour
     {
         foreach (var item in _publisherButtons)
         {
-            item.setButtonPressed += ChooseDifficult;
+            Subscribe(item);
         }
     }
+
     private void OnDisable()
     {
         foreach (var item in _publisherButtons)
         {
-            item.setButtonPressed -= ChooseDifficult;
+            UnSubscribe(item);
         }
     }
 }

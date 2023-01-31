@@ -453,8 +453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08a9377550ef43f987eb06e342561bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentText: {fileID: 1136414689}
-  startButton: {fileID: 1614036432}
+  currentText:
+  - {fileID: 1136414689}
 --- !u!4 &692994621
 Transform:
   m_ObjectHideFlags: 0
