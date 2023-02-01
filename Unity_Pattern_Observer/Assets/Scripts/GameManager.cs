@@ -16,9 +16,9 @@ public class GameManager : MonoBehaviour, IObserver
     private Difficult _difficult_e;
     private byte _counter = default;
 
-    public void Subscribe(IButtonPublisher value) => value.setButtonPressed += ChooseDifficult;
+    void IObserver.Subscribe(IButtonPublisher value) => value.setButtonPressed += ChooseDifficult;
 
-    public void UnSubscribe(IButtonPublisher value) => value.setButtonPressed -= ChooseDifficult;
+    void IObserver.UnSubscribe(IButtonPublisher value) => value.setButtonPressed -= ChooseDifficult;
 
     private void Awake()
     {
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour, IObserver
     {
         foreach (var item in _publisherButtons)
         {
-            Subscribe(item);
+            ((IObserver)gameObject.GetComponent<GameManager>()).Subscribe(item);
         }
     }
 
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour, IObserver
     {
         foreach (var item in _publisherButtons)
         {
-            UnSubscribe(item);
+            ((IObserver)gameObject.GetComponent<GameManager>()).UnSubscribe(item);
         }
     }
 }
