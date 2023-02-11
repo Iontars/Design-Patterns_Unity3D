@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private ArcherFactory archerFactory;
+    [SerializeField] private WarriorFactory warriorFactory;
+    public void ArcherButton()
     {
-        
+        var prefab = archerFactory.GetNewInstance();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void WarriorButton()
     {
-        
+        var prefab = warriorFactory.GetNewInstance();
     }
 }
