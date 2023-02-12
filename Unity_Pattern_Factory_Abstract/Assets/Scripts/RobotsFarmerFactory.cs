@@ -7,8 +7,7 @@ public class RobotsFarmerFactory : RobotsFactory
     private Transform _spawnPoint;
 
     public RobotsFarmerFactory(Transform spawnPoint)
-    {
-        
+    {        
         _spawnPoint = spawnPoint;
     }
 
@@ -24,16 +23,5 @@ public class RobotsFarmerFactory : RobotsFactory
         var _farmerT2Prefab = Resources.Load<GameObject>("FarmerT2");
         var _farmerT2 = Instantiate(_farmerT2Prefab, _spawnPoint.position, Quaternion.identity);
         return _farmerT2;
-    }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

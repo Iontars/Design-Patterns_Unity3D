@@ -8,7 +8,6 @@ public class RobotsWorkerFactory : RobotsFactory
 
     public RobotsWorkerFactory(Transform spawnPoint)
     {
-
         _spawnPoint = spawnPoint;
     }
 
