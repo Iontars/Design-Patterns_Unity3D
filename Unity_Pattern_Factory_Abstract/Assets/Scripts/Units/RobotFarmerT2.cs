@@ -9,8 +9,9 @@ public class RobotFarmerT2 : RobotTamplate
     public new string Name => "Mega WALL-E";
     void Awake()
     {
-        SetValues();
-        GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0, 200f, 115f);
+        SetValues(Name);
+        GetComponentsInChildren<SpriteRenderer>()[0].color = new UnityEngine.Color(0, 200f, 115f);
+        GetComponentsInChildren<SpriteRenderer>()[1].color = new UnityEngine.Color(0, 200f, 115f);
         farmerTool = FarmerToolType.farmToolT2;
     }
 

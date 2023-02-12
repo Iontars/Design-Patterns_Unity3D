@@ -7,14 +7,15 @@ public abstract class RobotTamplate : MonoBehaviour
     public float Speed { get; set; }
     public string Name { get; set; }
 
+
     void Awake()
     {
-        SetValues();
+        SetValues(Name);
     }
 
-    public virtual void SetValues()
+    public virtual void SetValues(string name)
     {
-        gameObject.name = Name;
+        gameObject.name = name;
     }
     void Update()
     {
