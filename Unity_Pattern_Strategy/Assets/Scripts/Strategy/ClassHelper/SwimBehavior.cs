@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SpeakAsHumanBehavior : ISpeak
+public class SwimBehavior : ISwim
 {
     private TextMeshProUGUI _text;
 
-    public SpeakAsHumanBehavior(TextMeshProUGUI text)
+    public SwimBehavior(TextMeshProUGUI text)
     {
         _text = text;
     }
 
-    public void Speak()
+    public void Swim()
     {
-        ShowText(_text, "чырык чырык");
+        ShowText(_text, "я плыву");
     }
 
     public void ShowText(TextMeshProUGUI text, string message)

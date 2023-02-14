@@ -6,7 +6,7 @@ public class AnimalBase : MonoBehaviour
 {
     #region Variable
     protected float speed = 0.2f;
-    protected float timer = 4;
+    //protected float timer = 4;
 
     protected ISpeak speakBehavior;
     protected ICanNot canNotBehavior;

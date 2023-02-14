@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SpeakAsHumanBehavior : ISpeak
+public class FlyBehavior : IFly
 {
     private TextMeshProUGUI _text;
 
-    public SpeakAsHumanBehavior(TextMeshProUGUI text)
+    public FlyBehavior(TextMeshProUGUI text)
     {
         _text = text;
     }
 
-    public void Speak()
+    public void Fly()
     {
-        ShowText(_text, "чырык чырык");
+        ShowText(_text, "я лечу");
     }
 
     public void ShowText(TextMeshProUGUI text, string message)

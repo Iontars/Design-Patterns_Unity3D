@@ -1,20 +1,19 @@
+﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEngine;
 
-public class SpeakAsHumanBehavior : ISpeak
+public class EatBehavior : IEat
 {
     private TextMeshProUGUI _text;
 
-    public SpeakAsHumanBehavior(TextMeshProUGUI text)
+    public EatBehavior(TextMeshProUGUI text)
     {
         _text = text;
     }
 
-    public void Speak()
+    public void Eat()
     {
-        ShowText(_text, "чырык чырык");
+        ShowText(_text, " я ем");
     }
 
     public void ShowText(TextMeshProUGUI text, string message)
@@ -23,3 +22,4 @@ public class SpeakAsHumanBehavior : ISpeak
         text.text = message;
     }
 }
+

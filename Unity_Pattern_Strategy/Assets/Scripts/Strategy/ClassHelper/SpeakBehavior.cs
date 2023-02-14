@@ -1,20 +1,19 @@
+﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEngine;
 
-public class SpeakAsHumanBehavior : ISpeak
+public class SpeakBehavior : ISpeak
 {
     private TextMeshProUGUI _text;
 
-    public SpeakAsHumanBehavior(TextMeshProUGUI text)
+    public SpeakBehavior(TextMeshProUGUI text)
     {
         _text = text;
     }
 
     public void Speak()
     {
-        ShowText(_text, "чырык чырык");
+        ShowText(_text, " говорю ");
     }
 
     public void ShowText(TextMeshProUGUI text, string message)
@@ -23,3 +22,4 @@ public class SpeakAsHumanBehavior : ISpeak
         text.text = message;
     }
 }
+

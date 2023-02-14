@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SpeakAsHumanBehavior : ISpeak
+public class TwoLegsBehavior : IMove
 {
+    // Start is called before  first frame update
     private TextMeshProUGUI _text;
 
-    public SpeakAsHumanBehavior(TextMeshProUGUI text)
+    public TwoLegsBehavior(TextMeshProUGUI text)
     {
         _text = text;
     }
 
-    public void Speak()
+    public void Move()
     {
-        ShowText(_text, "чырык чырык");
+        ShowText(_text, "Двигаюсь на 2 ногах");
     }
 
     public void ShowText(TextMeshProUGUI text, string message)

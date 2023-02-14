@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SpeakAsHumanBehavior : ISpeak
+public class FourLegsBehavior : IMove
 {
     private TextMeshProUGUI _text;
 
-    public SpeakAsHumanBehavior(TextMeshProUGUI text)
+    public FourLegsBehavior(TextMeshProUGUI text)
     {
         _text = text;
     }
 
-    public void Speak()
+    public void Move()
     {
-        ShowText(_text, "чырык чырык");
+        ShowText(_text, "Двигаюсь на 4 ногах");
     }
 
     public void ShowText(TextMeshProUGUI text, string message)
