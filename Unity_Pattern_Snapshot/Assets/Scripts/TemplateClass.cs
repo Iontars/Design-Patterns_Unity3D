@@ -10,6 +10,10 @@ using TMPro;
 
 public class TemplateClass : MonoBehaviour
 {
+    private float _yAxis, _xAxis, _speed = 10f;
+    private string _horizontal = "Horizontal";
+    private string _vertical = "Vertical";
+
     private Vector3 _currentPosition;
     private readonly Stack<SnapShot> _snapStorage = new(); 
 
@@ -25,17 +29,14 @@ public class TemplateClass : MonoBehaviour
 
     public SnapShot GetSnapShot()
     {
-        return new SnapShot(this, _currentPosition);
+        return new SnapShot(_currentPosition);
     }
-
-    public void CancelSnapShot()
-    {
-        
-    }
-
-
+    
     private void Update()
     {
-        
+        _xAxis = Input.GetAxis(_horizontal);
+        _yAxis = Input.GetAxis(_vertical);
+        transform.Translate(_xAxis * _speed * Time.deltaTime,
+                            _yAxis * _speed * Time.deltaTime, 0);
     }
 }

@@ -11,31 +11,31 @@ using TMPro;
 /// <summary> Descriptions </summary>
 public class Controller : MonoBehaviour
 {
-    private TemplateClass templateClass;
-    private SnapShot snapShot;
-    private readonly Stack<SnapShot> _snapStorage = new(); 
+    private TemplateClass _templateClass;
+    private SnapShot _snapShot;
 
-    void Awake()
+    private void Awake()
     {
-        templateClass = FindObjectOfType(typeof(TemplateClass)) as TemplateClass;
+        _templateClass = FindObjectOfType(typeof(TemplateClass)) as TemplateClass;
     }
 
-    void Start()
+    private void Start()
     {
         
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            templateClass.GetCurrentPosition();
-            _snapStorage.Push(templateClass.GetSnapShot());
+            print("Save");
+            _templateClass.GetCurrentPosition();
+            Storage.SnapStorage.Push(_templateClass.GetSnapShot());
         }
         else if(Input.GetKeyDown(KeyCode.Q))
         {
-            print(_snapStorage.Count);
-            templateClass.transform.position = _snapStorage.Pop().currentPosition;
+            print(Storage.SnapStorage.Count);
+            _templateClass.transform.position = Storage.SnapStorage.Pop().currentPosition;
         }
     }
 }
