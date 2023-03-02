@@ -11,15 +11,18 @@ using TMPro;
 public class SnapShot : MonoBehaviour
 {
     public Vector3 currentPosition;
+    private TemplateClass _templateClass;
 
-    public SnapShot(Vector3 inputPosition)
+    public SnapShot(TemplateClass templateClass, Vector3 inputPosition)
     {
+        _templateClass = templateClass;
         currentPosition = inputPosition;
     }
     
     void Start()
     {
-        
+        //_templateClass = FindObjectOfType(typeof(TemplateClass)) as TemplateClass;
+
     }
     
     void Update()

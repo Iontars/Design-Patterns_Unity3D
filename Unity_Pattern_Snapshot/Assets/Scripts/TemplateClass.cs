@@ -25,7 +25,12 @@ public class TemplateClass : MonoBehaviour
 
     public SnapShot GetSnapShot()
     {
-        return new SnapShot(_currentPosition);
+        return new SnapShot(this, _currentPosition);
+    }
+
+    public void CancelSnapShot()
+    {
+        
     }
 
 
