@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour, IObserver
         if (++_counter > Convert.ToInt32(Difficult.hard)) _counter = default; // последнее значение enum, есть его размер
         switch (_counter)
         {
-            case default(byte): _difficult_e = Difficult.easy; break;
+            case 0: _difficult_e = Difficult.easy; break;
             case 1: _difficult_e = Difficult.normal; break;
             case 2: _difficult_e = Difficult.hard; break;
         }
