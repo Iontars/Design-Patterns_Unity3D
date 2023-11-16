@@ -28,8 +28,7 @@ public class Cube : MonoBehaviour
             throw;
         }
     }
-
-
+    
     private void OnCollisionStay2D(Collision2D other)
     {
         Debug.LogWarning("Stay");
