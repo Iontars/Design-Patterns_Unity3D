@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour, IObserver
 {
-    
     private void OnEnable()
     {
         Ball.BallFallen += DoAction;

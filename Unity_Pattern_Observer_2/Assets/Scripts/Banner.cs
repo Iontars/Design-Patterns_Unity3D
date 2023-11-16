@@ -9,18 +9,8 @@ using UnityEngine.UI;
 public class Banner : MonoBehaviour, IObserver
 {
     [SerializeField] private Text _text;
-    private string ShowMessage  => "Is Fallen";
-
-    private void Awake()
-    {
-        
-    }
-
-    private void Start()
-    {
-        
-    }
-
+    private int _counter;
+    
     private void OnEnable()
     {
         Ball.BallFallen += DoAction;
@@ -33,7 +23,7 @@ public class Banner : MonoBehaviour, IObserver
     public void DoAction(object obj)
     {
         Ball ball = obj as Ball;
-        if (ball != null) GetComponent<Image>().material.color = ball.ThisColor;
-        _text.text = ShowMessage;
+        if (ball != null) GetComponent<Image>().color = ball.ThisColor;
+        _text.text = (++_counter).ToString();
     }
 }
