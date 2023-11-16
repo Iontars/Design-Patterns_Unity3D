@@ -1,0 +1,4 @@
+repository "Unity_Pattern_Mediator@unity_s1_szpLAR6eHfw@cloud"
+  path "/"
+    br "/main"
+    co "/main"
