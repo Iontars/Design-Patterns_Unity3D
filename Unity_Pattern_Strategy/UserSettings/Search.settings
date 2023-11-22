@@ -1,4 +1,5 @@
 trackSelection = true
+refreshSearchWindowsInPlayMode = false
 fetchPreview = true
 defaultFlags = 0
 keepOpen = false
@@ -9,22 +10,12 @@ showStatusBar = false
 scopes = {
 }
 providers = {
-	adb = {
-		active = false
-		priority = 2500
+	scene = {
+		active = true
+		priority = 50
 		defaultAction = null
 	}
 	asset = {
-		active = true
-		priority = 25
-		defaultAction = null
-	}
-	store = {
-		active = true
-		priority = 100
-		defaultAction = null
-	}
-	find = {
 		active = true
 		priority = 25
 		defaultAction = null
@@ -44,9 +35,24 @@ providers = {
 		priority = 100
 		defaultAction = null
 	}
-	scene = {
+	profilermarkers = {
+		active = false
+		priority = 100
+		defaultAction = null
+	}
+	adb = {
+		active = false
+		priority = 2500
+		defaultAction = null
+	}
+	store = {
 		active = true
-		priority = 50
+		priority = 100
+		defaultAction = null
+	}
+	find = {
+		active = true
+		priority = 25
 		defaultAction = null
 	}
 }
@@ -65,3 +71,5 @@ queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"
 disabledIndexers = ""
+minIndexVariations = 2
+findProviderIndexHelper = true
