@@ -12,7 +12,7 @@ public class SimpleBullet : Bullet
 
     private void Awake()
     {
-        Speed = 100;
+        Speed = 30;
     }
     
     protected override void OnMove()

@@ -4,46 +4,56 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Gun : MonoBehaviour, ISingleFireing, ITripleFireing
 {
     enum SetBulletTest
     {
-        Simple, Metall
+        Simple, Metal
     }
 
-    [SerializeField]private AmmoStorage _ammoStorage;
     private GameObject _bulletGo;
     private Bullet _bullet;
+    [SerializeField]private AmmoStorage _ammoStorage;
     [SerializeField]private Transform _bulletSpawnPosition;
     [SerializeField]private SetBulletTest _bulletTest;
 
     private void Awake()
     {
-        if (_bulletTest.Equals(SetBulletTest.Simple))
-        {
-            _bullet = _ammoStorage.GetBullet();
-        }
-        if (_bulletTest.Equals(SetBulletTest.Metall))
-        {
-            _bullet = _ammoStorage.GetBulletPro();
-        }
+        _bullet = _ammoStorage.GetBullet();
     }
+
+    private void OnEnable()
+    {
+        Buttons.LoadSimpleAmmo_e += SetSimple;
+        Buttons.LoadMetalAmmo_e += SetMetal;
+    }
+
+    private void OnDisable()
+    {
+        Buttons.LoadSimpleAmmo_e -= SetSimple;
+        Buttons.LoadMetalAmmo_e -= SetMetal;
+    }
+
+    private void SetSimple()
+    {
+        _bullet = _ammoStorage.GetBullet();
+    }
+    
+    private void SetMetal()
+    {
+        _bullet = _ammoStorage.GetBulletPro();
+    }
+    
 
     private void Fire()
     {
         _bulletGo = _bullet.gameObject;
-        if (_bulletGo != null)
+        if (!_bulletGo.IsUnityNull())
         {
-            Instantiate(_bulletGo, _bulletSpawnPosition.transform.position, Quaternion.identity);
+            TripleShooting();
         }
-        
-        print(_bulletGo);
     }
-    void Start()
-    {
-        
-    }
-
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -52,4 +62,18 @@ public class Gun : MonoBehaviour
         }
     }
 
+    public void SingleShooting()
+    {
+        Instantiate(_bulletGo, _bulletSpawnPosition.transform.position, Quaternion.identity);
+    }
+
+    public void TripleShooting()
+    {
+        var firstBulletPosition = _bulletSpawnPosition.transform.position;
+        Vector2 secondBulletPosition = new Vector2(firstBulletPosition.x - 1, firstBulletPosition.y);
+        Vector2 thirdBulletPosition = new Vector2(firstBulletPosition.x + 1, firstBulletPosition.y);
+        Instantiate(_bulletGo, firstBulletPosition, Quaternion.identity);
+        Instantiate(_bulletGo, secondBulletPosition, Quaternion.identity);
+        Instantiate(_bulletGo, thirdBulletPosition, Quaternion.identity);
+    }
 }

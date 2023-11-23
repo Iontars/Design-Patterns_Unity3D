@@ -10,7 +10,7 @@ public class FullMetalBullet : Bullet
 
     private void Awake()
     {
-        Speed = 40;
+        Speed = 10;
     }
     
     protected override void OnMove()

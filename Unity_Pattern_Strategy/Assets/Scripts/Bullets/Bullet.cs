@@ -14,10 +14,16 @@ public abstract class Bullet : MonoBehaviour, IFireing
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Invoke(nameof(Destroy), 3);
     }
 
     public virtual void DestroyBullet()
     {
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 
     
