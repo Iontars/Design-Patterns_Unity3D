@@ -11,8 +11,13 @@ public class AmmoStorage : MonoBehaviour
         
     }
 
-    public Bullet GetBullet(Bullet bullet)
+    public Bullet GetBullet()
     {
-        return bullet;
+        return _simpleBullet;
+    }
+    
+    public Bullet GetBulletPro()
+    {
+        return _fullMetalBullet;
     }
 }

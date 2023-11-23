@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
         Simple, Metall
     }
 
+    [SerializeField]private AmmoStorage _ammoStorage;
     private GameObject _bulletGo;
     private Bullet _bullet;
     [SerializeField]private Transform _bulletSpawnPosition;
@@ -20,17 +21,17 @@ public class Gun : MonoBehaviour
     {
         if (_bulletTest.Equals(SetBulletTest.Simple))
         {
-            _bullet = new SimpleBullet();
+            _bullet = _ammoStorage.GetBullet();
         }
         if (_bulletTest.Equals(SetBulletTest.Metall))
         {
-            _bullet = new FullMetalBullet();
+            _bullet = _ammoStorage.GetBulletPro();
         }
     }
 
     private void Fire()
     {
-        _bulletGo = _bullet.GetBullet();
+        _bulletGo = _bullet.gameObject;
         if (_bulletGo != null)
         {
             Instantiate(_bulletGo, _bulletSpawnPosition.transform.position, Quaternion.identity);

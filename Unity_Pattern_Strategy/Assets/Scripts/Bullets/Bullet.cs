@@ -5,13 +5,15 @@ using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour, IFireing
 {
-    public float Damage { get;  set; }
-    public float Speed { get;  set; }
-    public float Mass { get;  set; }
+    protected abstract float Damage { get;  set; }
+    protected abstract float Speed { get;  set; }
+    protected abstract float Mass { get;  set; }
+
+    protected Rigidbody2D rb;
     
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public virtual void DestroyBullet()
@@ -22,7 +24,7 @@ public abstract class Bullet : MonoBehaviour, IFireing
 
     protected virtual void OnMove()
     {
-        
+        rb.velocity = Vector2.up * Speed;
     }
 
     private void FixedUpdate()

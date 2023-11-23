@@ -224,6 +224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 554915127}
+  - component: {fileID: 554915128}
   m_Layer: 0
   m_Name: AmmoStorage
   m_TagString: Untagged
@@ -246,6 +247,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &554915128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554915126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c7def8eb9ba1747885d326a2a7fa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _simpleBullet: {fileID: 1546854275662927908, guid: fbe7016bc7cf665438be199606ffa935, type: 3}
+  _fullMetalBullet: {fileID: 3990958715157930363, guid: ad654433bf899f7488f06215a37effe7, type: 3}
 --- !u!1 &663273102
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550e4890de5fd6a4c92f5ff5c448dd0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ammoStorage: {fileID: 554915128}
   _bulletSpawnPosition: {fileID: 916310611}
   _bulletTest: 0
 --- !u!212 &1409507988

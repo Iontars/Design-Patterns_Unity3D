@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class SimpleBullet : Bullet
 {
-    private GameObject _gameObject;
+    
+    protected override float Damage { get; set; }
+    protected override float Speed { get; set; }
+    protected override float Mass { get; set; }
 
     private void Awake()
     {
-        _gameObject = gameObject;
+        Speed = 100;
     }
     
-
     protected override void OnMove()
     {
-        
+        rb.velocity = Vector2.up * this.Speed;
     }
 
     private void Update()
