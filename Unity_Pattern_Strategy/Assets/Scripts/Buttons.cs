@@ -7,11 +7,24 @@ public class Buttons : MonoBehaviour
 {
     public static event Action LoadSimpleAmmo_e;
     public static event Action LoadMetalAmmo_e;
+    public static event Action EnableSingleFireing_e;
+    public static event Action EnableTripleFireing_e;
     
     void Start()
     {
         
     }
+
+    public void EnableSingleFireing()
+    {
+        EnableSingleFireing_e?.Invoke();
+    }
+    
+    public void EnableTripleFireing()
+    {
+        EnableTripleFireing_e?.Invoke();
+    }
+    
 
     public void LoadSimpleAmmo()
     {

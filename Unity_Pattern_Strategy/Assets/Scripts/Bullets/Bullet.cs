@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public abstract class Bullet : MonoBehaviour, IFireing
 {
     protected abstract float Damage { get;  set; }
@@ -10,6 +9,7 @@ public abstract class Bullet : MonoBehaviour, IFireing
     protected abstract float Mass { get;  set; }
 
     protected Rigidbody2D rb;
+    protected abstract SpriteRenderer GoColor { get;  set; }
     
     void Start()
     {

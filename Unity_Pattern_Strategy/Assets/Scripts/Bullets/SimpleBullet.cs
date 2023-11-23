@@ -9,10 +9,13 @@ public class SimpleBullet : Bullet
     protected override float Damage { get; set; }
     protected override float Speed { get; set; }
     protected override float Mass { get; set; }
+    protected override SpriteRenderer GoColor { get;  set; }
 
     private void Awake()
     {
-        Speed = 30;
+        Speed = 50;
+        GoColor = GetComponent<SpriteRenderer>();
+        GoColor.color = Color.blue;
     }
     
     protected override void OnMove()
