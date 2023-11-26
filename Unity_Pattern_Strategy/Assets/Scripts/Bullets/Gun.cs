@@ -17,6 +17,8 @@ public class Gun : MonoBehaviour, ISingleFireing, ITripleFireing
     [SerializeField]private Transform _bulletSpawnPosition;
     [SerializeField]private SetBulletMode _bulletMode;
 
+    private float _fireSpeed = 0.3f;
+
     private void Awake()
     {
         _bullet = _ammoStorage.GetBullet();
@@ -76,7 +78,7 @@ public class Gun : MonoBehaviour, ISingleFireing, ITripleFireing
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && TimeDelay.RepeatEveryFewSec(_fireSpeed))
         {
             Fire();
         }

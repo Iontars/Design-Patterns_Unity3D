@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5db85d89-a0c8-4ee6-b237-0a52001bac50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity_Pattern_Strategy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity_Pattern_Strategy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FullMetalAmmo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FullMetalAmmo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SimpleAmmo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SimpleAmmo.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/FullMetalBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/FullMetalBullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/Gun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/SimpleBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/SimpleBullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Buttons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Buttons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MoveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MoveController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +105,8 @@
       <workItem from="1700707366804" duration="1926000" />
       <workItem from="1700716475632" duration="4599000" />
       <workItem from="1700743359383" duration="5640000" />
+      <workItem from="1700979832361" duration="735000" />
+      <workItem from="1700986016367" duration="4319000" />
     </task>
     <servers />
   </component>

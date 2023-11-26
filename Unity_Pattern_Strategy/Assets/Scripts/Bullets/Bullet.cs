@@ -14,20 +14,30 @@ public abstract class Bullet : MonoBehaviour, IFireing
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Invoke(nameof(Destroy), 3);
+        Invoke(nameof(DestroyBullet), 4);
     }
 
+    public virtual void DestroyBullet(float value)
+    {
+        if (gameObject != null)
+        {
+            Destroy(gameObject, value);
+        }
+    }
+    
     public virtual void DestroyBullet()
     {
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+        }
     }
-
-    public void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
     
-
+    private void OnBecameInvisible()
+    {
+        DestroyBullet(0.3f);
+    }
+    
     protected virtual void OnMove()
     {
         rb.velocity = Vector2.up * Speed;

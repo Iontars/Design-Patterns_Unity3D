@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class FullMetalBullet : Bullet
     {
         rb.AddForce(Vector2.up * (Speed * Time.deltaTime), ForceMode2D.Impulse);
     }
-
+    
     private void Update()
     {
         OnMove();
